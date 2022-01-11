@@ -1,4 +1,13 @@
 ###### useRef ######
+- useRef는 용도가 두 가지 존재한다. 첫 번째로는 특정 DOM을 선택하는 용도. 두 번째로는 컴포넌트 안에서 조회 및 
+수정할 수 있는 변수를 관리하는 용도이다. 
+
+두 번째의 경우에는 다음과 같은 값을 관리할 수 있다
+    - setTimeout, setInterval 을 통해서 만들어진 id
+    - 외부 라이브러리를 사용하여 생성된 인스턴스
+    - scroll 위치
+
+
 
 - useRef()훅을 이용해서 Ref 객체를 생성하고 이 객체를 우리가 선택하고 싶은 DOM의 ref값으로 설정해주면 Ref객체의 current프로퍼티를
 통해 우리가 원하는(지정하고 싶은) DOM을 가르키게 된다 그러면, Ref객체.current 의 값은 DOM 을 가리키게 된다
@@ -6,7 +15,8 @@ ex) 1.  const nameInput = useRef(); nameInput에 Ref객체를 생성한다 2. <i
 원하는 DOM에 ref속성을 추가하고 nameInput이라는 Ref객체를 담는다 3. 이제부터는 nameInput.current는 
 2번의 input태그를 가리키게 된다.
 
-- useRef(특정값) 이렇게 사용했을 경우 인자로 넘어온 초기값을(특정값) Ref객체.current속성에 할당한다.
+- useRef(특정값) 이렇게 사용했을 경우 인자로 넘어온 초기값을(특정값) Ref객체의 current속성에 할당한다.
+따라서 Ref객체.current를 결과값은 특정값이 반환된다. 
 - 이 current 속성은 값을 변경해도 상태 변경할때처럼 React컴포넌트가 재실행되지 않는다. 즉 React컴포넌트가
 다시 렌더링 될 때에도 current의 값이 유실되지 않는다. 렌더링에 영향을 미치지않는 공간을 마련.
 
