@@ -1,0 +1,5 @@
+박스크기 
+박스요소에 크기를 지정하면(width or height) 기본적으로 콘텐츠영역에 적용된다. 그러나 실제 박스크기는
+border,margin, padding을 모두 더해야하기 때문에 이들을 고려하여야 한다.
+box-sizing : border-box : 박스의 크기 계산을 편하기 하기 위해서 border을 width의 기준으로 하는 것
+
