@@ -1,0 +1,12 @@
+선택자에는 우선 순위가 존재한다. 
+
+.selection-nav__targetpart .clicked {}; 이렇게 쓰는거랑
+.clicked 이렇게 쓰는거랑 채점되는 점수가 다르다. 더 구체적일수록 순위가 높아지는 것같다.
+선택자 우선순위는 이거 참고
+일단 아래있는게 우선순위가 높으며 다른 css파일에 있으면 html내부에서 아래에 선언된게 우선순위가 더 높고
+선택자 종류마다 우선순위가 다르다.
+복합 선택자 팬턴의 경우에는 결합되는 선택자 방식의 정해진 점수를 합산해서 우선순위를 정한다
+!important를 사용해서 최우선으로 적용가능하지만 비추
+
+
+http://www.devdic.com/css/refer/documents/document:1806/%EC%84%A0%ED%83%9D%EC%9E%90(Selector)%EC%9D%98-%EC%9A%B0%EC%84%A0-%EC%88%9C%EC%9C%84

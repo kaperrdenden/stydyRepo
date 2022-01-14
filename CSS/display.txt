@@ -1,0 +1,8 @@
+display
+
+display 요소를 보여주는 방식을 지정하는 속성. 콘텐츠를 보이지않게 할 수도 있고 콘텐츠를 나란이 배치하는데 사용
+display: none; 보이지 않음, visibility:hidden속성과 유사하지만 영역 자치게 없어지는 것
+display: block; 해당 컨테이너를 블록박스 상태로 만듦 
+block 태그는 width=100%인 상태
+display: inline; 인라인 상태로 만듦
+display: inline-block; inline 처럼 배열되지만 성질은 box
