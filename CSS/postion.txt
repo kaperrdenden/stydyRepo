@@ -1,6 +1,7 @@
 position
-static 기본값. 순서대로. 왼쪽에서 오른쪽 위에서 아래로
-relative static처럼 순서대로 배치 되지만 top,right,bottom,left를 이용해 원하는 위치를 지정 가능하다
+
+1. position:static 기본값. 순서대로. 왼쪽에서 오른쪽 위에서 아래로
+2. position:relative static처럼 순서대로 배치 되지만 top,right,bottom,left를 이용해 원하는 위치를 지정 가능하다
 이 때 좌표값은 원래있던 위치 즉 static기준으로 원래 위치해야할 곳이 기준이 되며 지정한 속성에 따라
 상하좌우 원하는 자리에 배치가 가능하다. 새로운 layer로 가는것이 아니라 기존의 위치에서 약간만 움직이면 좋을때 
 사용가능하다.
@@ -12,3 +13,17 @@ fixed 좌표로 위치를 결정하지만 기준이 부모요소가 아니라 �
 z-index 박스들이 중첩되는 경우 박스들의 수진위치를 조정하기 위한 소성.
 z-index값이 높을 수록위, 작을수록 아래로 배치되며 -인경우에 콘텐츠의 아래쪽을 의미.
 position 속성이 적용되어 있을때에만 의미가 있다
+3. position:fixed
+
+ 해당 엘리먼트는 부모엘리먼트로 부터 완전 독립하여 
+브라우저 상에 어디든지 원하는 곳에 위치가능하다. 스크롤할 때 그 자리 그대로 유지하며
+사라지지 않는다. position fixed를 설정하고 화면의 어디에 고정시킬지 offset 속성으로 설정해준다
+ex)  top: 0; right:0 맨위 오른 쪽에 붙어서 나옴, left:0; right:0을 주면 알아서 화면 좌우에 꽉차게
+붙는다. (이 대신에 다른 방법들도 존재 ex) width:100%
+fixed를 사용하면 다른 컨텐트들을 가릴 수도 있다 그 이유는 다른 레이어에 존재해서 안보이게 하기 때문이다
+이걸 해결하는 방법은 body엘리먼트 상단에 메뉴바 높이만큼 패딩을 줘서 해결이 가능하다.
+fixed를 사용하게 되면 해당 컨테이너의 width는 없어진다. 그래서  justify-content: space-between;
+이런게 먹히지 않는다 이 때 width:100% 이렇게 길이를 부여하면 해결된다
+하지만 이건 부모컨테이너 통채로만 조정이 안될 뿐이지 하위 컨테이너들은 justify-content: space-between;이런
+컨트롤이 가능하다
+flex-direction: column; 축이 바뀌게 되면 justify-content: space-between; 얘네들도 바뀌게 된다
