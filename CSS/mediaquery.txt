@@ -1,0 +1,33 @@
+###########media query 오직 css만을 이용해서 스크린의 사이즈를 알 수 있는 방법
+#  @media screen and (max-width:400px){             스크린이 400px보다 작으면
+        
+      }
+#  @media screen and (min-width: 400px) and (max-width: 750px) {       400보다 크고 750보다 작을때까지 실행)
+        div {
+          background-color: blue;
+        }
+      }
+
+검사의 좌측위에 있는 divce tool bar찾아서 누르면 우리가 폰에서 쓰는 화면 볼 수 있음
+
+## @media screen and (min-width: 400px) and (max-width:1200px) and (orientation:landscape)
+이렇게하면 400이상 ~  1200이하이고 가로모드일 때 적용 ! 즉 세로모드에서는 적용안됨
+
+
+
+##@media screen and (min-width: 400px) and (max-width:1200px) and (orientation:portrait) 
+                                           세로모드일때                                가로모드일 때는 적용 안됨
+## span {
+        font-size: 36px;
+      }
+      @media screen and (orientation: landscape) {          이렇게 작성하면 스팬에 쓰여진 글자가 세로모드일때는 보이다가
+        span {				스크린이 가로모드가 되면  스팬내용이 안보이게됨 (존재하지만 안보이는것)
+          display: none;	
+        }
+      }
+3e
+미디어 쿼리는 조건문처럼 이게 참이면 실행하라고 조건을 말해주는 것
+미디어 쿼리 안에 원하는 모든 css 넣을 수 있음 태그들도
+미디어 쿼리는 and로 연결됨 
+(min-device-width:50px) 핸드폰에만 쓰이는데 많이 사용됨
+#  media types에는 여러가지가 있는데 그중에 media screen, media print(스크린을 프린트하려할 떄의 화면 ) 가 제일 많이 쓰임
