@@ -1,0 +1,77 @@
+Transition 어떤 상태에서 다른 상태로의 변화를 애니메이션으로 만드는 방법
+#transition은 색상이 자연스럽게 변하는 등의 애니메이션에 와야하고. state가 없는 요소에 붙어야한다
+
+# transition: background-color 10s ease-in-out, color 10s ease-in-out;       
+   background컬러가 10초동안 변화한다.텍스트는 바로 바뀌지만 
+배경은 10초동안 바뀜   특정한 누구를 지정한 것이 아니라
+a태그에서 background color,color가 바뀔때는 10초가 걸린다고 적은것
+
+             ,콤마를 붙이고 트랜지션 기능 더 추가 가능
+
+
+######### transition: all 4s ease-in-out; 이렇게 변화하는 모든것들에대해서도 적용 가능
+#####transition은 항상 가장 처음 생겨난곳에 있어야함 (state가 아닌곳)
+######## 적용이 되려면 각 태그에서 변화하는 부분이 있어야함, 즉  한쪽에만 존재하면 변화 xxxxx
+
+https://matthewlein.com/tools/ceaser을 이용해서  애니메이션이 어떻게 바뀌는지 볼수있음
+@###########
+ a {
+        color: white;
+        background-color: tomato;
+        text-decoration: none;
+        padding: 3px 5px;
+        border-radius: 5px;                        <<<<<<<<<<바뀌기 전       
+        font-size: 55px;                                 바뀌기 전에 transition 적용 
+        transition: all 4s ease-in-out; <<< 
+      }
+      a:hover {
+        border-radius: 30px;
+        color: tomato;                            <<<<<<<<<<<< 바뀐 후
+        background-color: white;
+      }
+################
+ease-in-out <<애니메이션이 어떻게 변할지 말해주는 것
+디폴트로 갖고 있는 것은 linear, ease-in, ease-in-out, ease-out, ease
+
+transition: all 4s cubic-bezier(0.68, -0.55, 0.265, 1.55); 이거는 애니메이션 변화를 구체적으로 적어두는 것 
+                       사이트에 들어가서 복사 붙여넣기도 가능 (내취향에 맞게 변화도 가능)
+하지만 대부분 ease-in, ease-out, ease-in-out사용
+
+~~~~~~~~~~~~~~~~~~~~~~~즉 transition은 state(상태)에 따라 바뀌는 속성을 가지고 있으면 사용되는것 즉 변화가 있을 때
+a에서 b로 바꿀
+transition: all 4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+보통 이렇게 다 지정해서 바꾸지만 . 상황에 따라 부분적으로만 바꿀 수 있는게 있음
+그럴 때는 all이 아니라 color 4s 이런식으로 지정해줘야함
+
+############# 
+ transition: color 4s cubic-bezier(0.68, -0.55, 0.265, 1.55),
+          border-radius 1s ease-in-out;                           이처럼 컬러는 4초, 테두리 둥글기는 1초만에 바꿀 수 있음
+
+
+#########transfromation 말그대로 한가지 요소를 변형시킬수있다
+transform mdn추천
+
+## img {
+        border: 5px solid black;
+        border-radius: 50%;                 원을 만들 수 있는 꿀팁
+        transform: rotateX(360deg) rotateY(120deg) rotateZ(110deg) ;             X축을 기준으로 360도 돌려버림(그대로)
+      }
+#transform: scaleY(12); y축으로 12배
+#transform: scale(2,2);x, y축으로 2배
+#transform: translateX(-90px));            X축으로 -90만큼 이동시킴 (특징으로는 다른 형제들의 위치를 신경쓰지 않고 
+깔아뭉개버릴 수도 있음)        즉 다른 box element, 이미지에 영향을 끼치지 않음. 다른 형제들이 transfrom으로 
+위치가 변했다는 것을 눈치채지 못하고 자리 끝까지 지킴 . 다른차원에 존재하는ㄱ ㅓㅅ
+
+#transform: skew(100deg);         비스듬히 기울이기
+ ##################### transition과 transform을 합칠 수있음
+img {
+        border: 5px solid black;
+        border-radius: 50%;
+        transition: transform 5s ease-in-out;                     트랜스폼이 일어날때라고 설정
+      }                                                                      ******주의할점 이때도 transition은 state가 아닌 root 에 있어야한다는것
+      img:hover {
+        transform: rotateZ(90deg);
+      }
+
+##################
+
