@@ -1,0 +1,33 @@
+선택자: html 요소들을 지목해주는 것들. 여러가지의 선택자가 존재한다.
+
+1. 전체 선택자 * 유니버셜 셀렉터
+2. type셀렉터(엘리먼트,태그 셀렉터)
+3. 클래스 셀렉터
+4. id 셀렉터 한페이지당 하나만 사용가능하다
+5. 속성 선택자
+    --태그[속성] 해당 속성을 들고있는 모든 태그
+    --태그[속성=값] 해당 속성의 값인 모든 태그
+    --[attr^=value]	li[class^="box-"]
+    --해당 속성이 해당 밸류로 시작하는 값들
+    --[attr$=value]	li[class$="-box"]	Matches elements with an attr attribute whose value ends with value.
+    --[attr*=value]	li[class*="box"] class내부에 box라는 글자가 어디든 존재하면
+    --li[class^="a" i] 이렇게 ]닫기 전에 i를 써주면 아스키코드를 동등하게 간주헤준다
+    --type tag(div)
+6 속성 선택자
+    --태그[속성] 해당 속성을 들고있는 모든 태그
+    --태그[속성=값] 해당 속성의 값인 모든 태그
+    --[attr^=value]	li[class^="box-"]
+    --해당 속성이 해당 밸류로 시작하는 값들
+    --[attr$=value]	li[class$="-box"]	Matches elements with an attr attribute whose value ends with value.
+    --[attr*=value]	li[class*="box"] class내부에 box라는 글자가 어디든 존재하면
+    --li[class^="a" i] 이렇게 ]닫기 전에 i를 써주면 아스키코드를 동등하게 간주헤준다
+state :
+7.  자손 결합자
+    -- div p 와같이 띄어쓰기로 구분함
+    
+    자식 결합자
+    -- div > p div의 직계 자식만 선택한다
+    -- div + p div 바로 다음의 형제만 즉 div와 p사이에 다른 태그가 끼면 안된다
+
+    제너럴 형제 결합자
+    -- div ~ p 바로 엪에 인접한 관계가 아니라 div랑 멀리 떨어져있는 형제일지라도 선택이 된다.
