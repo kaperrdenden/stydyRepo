@@ -1,0 +1,4 @@
+######react-router######
+
+@react-router-dom 버전 6인 경우엔 switch가 Routes로 대체된 것 같아서,     npm uninstall react-router-dom
+후에   npm install react-router-dom@5.2.0으로 설치
